@@ -1,7 +1,10 @@
+import { LoadingOverlay } from "@mantine/core";
 import Head from "next/head";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
+    <Layout>
       <div>
         <Head>
           <title>FUDO</title>
@@ -13,6 +16,7 @@ export default function Home() {
           <h1>Subscribe Zainkeepscode</h1>        
         </main>
       </div>
+      </Layout>
   );
 }
 
