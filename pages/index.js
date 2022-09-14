@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import css from "../styles/Home.module.css"
 import Layout from "../components/layout";
+import Services from "../components/Services";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
         </Head>
         {/* body */}
         <main>
-          <Hero />      
+          <Hero />   
+          <Services />   
         </main>
       </div>
       </Layout>
