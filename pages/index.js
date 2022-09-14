@@ -1,7 +1,7 @@
 import { LoadingOverlay } from "@mantine/core";
 import Head from "next/head";
 import Hero from "../components/Hero";
-import css from "../components/Hero"
+import css from "../styles/Home.module.css"
 import Layout from "../components/layout";
 
 export default function Home() {

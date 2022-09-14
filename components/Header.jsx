@@ -6,12 +6,12 @@ import {UilShoppingBag} from '@iconscout/react-unicons';
 
 export default function Header(){
     return(
-        <div className={css.Header}>
+        <div className={css.header}>
             {/* logo side */}
             <div className={css.logo}>
                 <Image src={Logo} alt= "" width={50} height={50}/>
                 <span>FUDO</span>
-
+            </div>
                 {/* menu side */}
                 <ul className={css.menu}>
                     <li>Home</li>
@@ -27,6 +27,5 @@ export default function Header(){
                     </div>
                 </div>
             </div>
-        </div>
     )
 };
