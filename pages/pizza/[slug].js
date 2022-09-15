@@ -8,8 +8,17 @@ import { useState } from "react";
 
 export default function Pizza({ pizza }) {
   const src = urlFor(pizza.image).url();
-
+  const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(1); 
+
+  //Handle Quantity
+  const handleQuan = (type) => {
+    type === "inc"
+        ? setQuantity((prev) => prev + 1)
+        : quantity === 1
+        ? null 
+        : setQuantity((prev) => prev - 1);
+  };
 
   return (
     <Layout>
@@ -30,8 +39,7 @@ export default function Pizza({ pizza }) {
             <span>{pizza.name}</span>
             <span>{pizza.details}</span>
 
-            <span><span style={{color:"var(--themeRed)"}}>$</span>{pizza.price[1]}</span>
-            <span>$ {pizza.price[1]}</span>
+            <span><span style={{color:"var(--themeRed)"}}>$</span>{pizza.price[size]}</span>
           <div className={css.size}>
             <span>Size</span>
             <div className={css.SizeVariants}>
@@ -57,15 +65,17 @@ export default function Pizza({ pizza }) {
                 weight={20}
                 alt=""
                 objectFit="contain"
+                onClick={() => handleQuan("dec")}
                 />
 
-                <span>1</span>
+                <span>{quantity}</span>
 
                 <Image src={RightArrow}
                 height={20} 
                 weight={20}
                 alt=""
                 objectFit="contain"
+                onClick={() => handleQuan("inc")}
                 />
             </div>
           </div>
